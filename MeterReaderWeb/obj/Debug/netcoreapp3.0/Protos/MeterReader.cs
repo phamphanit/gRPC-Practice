@@ -24,17 +24,23 @@ namespace MeterReaderWeb.Services {
     static MeterReaderReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhQcm90b3MvTWV0ZXJSZWFkZXIucHJvdG8iXQoOUmVhZGluZ01lc3NhZ2US",
-            "EgoKY3VzdG9tZXJJZBgBIAEoBRIUCgxyZWFkaW5nVmFsdWUYAiABKAUSDQoF",
-            "bm90ZXMYAyABKAkSEgoKc3VjY2Vzc2Z1bBgEIAEoCCIxCg1TdGF0dXNNZXNz",
-            "YWdlEg8KB21lc3NhZ2UYASABKAkSDwoHc3VjY2VzcxgCIAEoCDJEChNNZXRl",
-            "clJlYWRpbmdTZXJ2aWNlEi0KCkFkZFJlYWRpbmcSDy5SZWFkaW5nTWVzc2Fn",
-            "ZRoOLlN0YXR1c01lc3NhZ2VCGqoCF01ldGVyUmVhZGVyV2ViLlNlcnZpY2Vz",
-            "YgZwcm90bzM="));
+            "ChhQcm90b3MvTWV0ZXJSZWFkZXIucHJvdG8aElByb3Rvcy9lbnVtcy5wcm90",
+            "bxofZ29vZ2xlL3Byb3RvYnVmL3RpbWVzdGFtcC5wcm90bxobZ29vZ2xlL3By",
+            "b3RvYnVmL2VtcHR5LnByb3RvImUKDVJlYWRpbmdQYWNrZXQSIQoIcmVhZGlu",
+            "Z3MYASADKAsyDy5SZWFkaW5nTWVzc2FnZRINCgVub3RlcxgCIAEoCRIiCgpz",
+            "dWNjZXNzZnVsGAMgASgOMg4uUmVhZGluZ1N0YXR1cyKDAQoOUmVhZGluZ01l",
+            "c3NhZ2USEgoKY3VzdG9tZXJJZBgBIAEoBRIUCgxyZWFkaW5nVmFsdWUYAiAB",
+            "KAUSLwoLcmVhZGluZ1RpbWUYBSABKAsyGi5nb29nbGUucHJvdG9idWYuVGlt",
+            "ZXN0YW1wSgQIAxAESgQIBBAFUgpzdWNjZXNzZnVsIkEKDVN0YXR1c01lc3Nh",
+            "Z2USDwoHbWVzc2FnZRgBIAEoCRIfCgdzdWNjZXNzGAIgASgOMg4uUmVhZGlu",
+            "Z1N0YXR1czJDChNNZXRlclJlYWRpbmdTZXJ2aWNlEiwKCkFkZFJlYWRpbmcS",
+            "Di5SZWFkaW5nUGFja2V0Gg4uU3RhdHVzTWVzc2FnZUIaqgIXTWV0ZXJSZWFk",
+            "ZXJXZWIuU2VydmljZXNiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::MeterReaderWeb.Services.EnumsReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::MeterReaderWeb.Services.ReadingMessage), global::MeterReaderWeb.Services.ReadingMessage.Parser, new[]{ "CustomerId", "ReadingValue", "Notes", "Successful" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MeterReaderWeb.Services.ReadingPacket), global::MeterReaderWeb.Services.ReadingPacket.Parser, new[]{ "Readings", "Notes", "Successful" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MeterReaderWeb.Services.ReadingMessage), global::MeterReaderWeb.Services.ReadingMessage.Parser, new[]{ "CustomerId", "ReadingValue", "ReadingTime" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MeterReaderWeb.Services.StatusMessage), global::MeterReaderWeb.Services.StatusMessage.Parser, new[]{ "Message", "Success" }, null, null, null, null)
           }));
     }
@@ -42,6 +48,239 @@ namespace MeterReaderWeb.Services {
 
   }
   #region Messages
+  public sealed partial class ReadingPacket : pb::IMessage<ReadingPacket>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ReadingPacket> _parser = new pb::MessageParser<ReadingPacket>(() => new ReadingPacket());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ReadingPacket> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::MeterReaderWeb.Services.MeterReaderReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ReadingPacket() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ReadingPacket(ReadingPacket other) : this() {
+      readings_ = other.readings_.Clone();
+      notes_ = other.notes_;
+      successful_ = other.successful_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ReadingPacket Clone() {
+      return new ReadingPacket(this);
+    }
+
+    /// <summary>Field number for the "readings" field.</summary>
+    public const int ReadingsFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::MeterReaderWeb.Services.ReadingMessage> _repeated_readings_codec
+        = pb::FieldCodec.ForMessage(10, global::MeterReaderWeb.Services.ReadingMessage.Parser);
+    private readonly pbc::RepeatedField<global::MeterReaderWeb.Services.ReadingMessage> readings_ = new pbc::RepeatedField<global::MeterReaderWeb.Services.ReadingMessage>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::MeterReaderWeb.Services.ReadingMessage> Readings {
+      get { return readings_; }
+    }
+
+    /// <summary>Field number for the "notes" field.</summary>
+    public const int NotesFieldNumber = 2;
+    private string notes_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Notes {
+      get { return notes_; }
+      set {
+        notes_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "successful" field.</summary>
+    public const int SuccessfulFieldNumber = 3;
+    private global::MeterReaderWeb.Services.ReadingStatus successful_ = global::MeterReaderWeb.Services.ReadingStatus.Invalid;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::MeterReaderWeb.Services.ReadingStatus Successful {
+      get { return successful_; }
+      set {
+        successful_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ReadingPacket);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ReadingPacket other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!readings_.Equals(other.readings_)) return false;
+      if (Notes != other.Notes) return false;
+      if (Successful != other.Successful) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= readings_.GetHashCode();
+      if (Notes.Length != 0) hash ^= Notes.GetHashCode();
+      if (Successful != global::MeterReaderWeb.Services.ReadingStatus.Invalid) hash ^= Successful.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      readings_.WriteTo(output, _repeated_readings_codec);
+      if (Notes.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Notes);
+      }
+      if (Successful != global::MeterReaderWeb.Services.ReadingStatus.Invalid) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) Successful);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      readings_.WriteTo(ref output, _repeated_readings_codec);
+      if (Notes.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Notes);
+      }
+      if (Successful != global::MeterReaderWeb.Services.ReadingStatus.Invalid) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) Successful);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += readings_.CalculateSize(_repeated_readings_codec);
+      if (Notes.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Notes);
+      }
+      if (Successful != global::MeterReaderWeb.Services.ReadingStatus.Invalid) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Successful);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ReadingPacket other) {
+      if (other == null) {
+        return;
+      }
+      readings_.Add(other.readings_);
+      if (other.Notes.Length != 0) {
+        Notes = other.Notes;
+      }
+      if (other.Successful != global::MeterReaderWeb.Services.ReadingStatus.Invalid) {
+        Successful = other.Successful;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            readings_.AddEntriesFrom(input, _repeated_readings_codec);
+            break;
+          }
+          case 18: {
+            Notes = input.ReadString();
+            break;
+          }
+          case 24: {
+            Successful = (global::MeterReaderWeb.Services.ReadingStatus) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            readings_.AddEntriesFrom(ref input, _repeated_readings_codec);
+            break;
+          }
+          case 18: {
+            Notes = input.ReadString();
+            break;
+          }
+          case 24: {
+            Successful = (global::MeterReaderWeb.Services.ReadingStatus) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   public sealed partial class ReadingMessage : pb::IMessage<ReadingMessage>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -54,7 +293,7 @@ namespace MeterReaderWeb.Services {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MeterReaderWeb.Services.MeterReaderReflection.Descriptor.MessageTypes[0]; }
+      get { return global::MeterReaderWeb.Services.MeterReaderReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -73,8 +312,7 @@ namespace MeterReaderWeb.Services {
     public ReadingMessage(ReadingMessage other) : this() {
       customerId_ = other.customerId_;
       readingValue_ = other.readingValue_;
-      notes_ = other.notes_;
-      successful_ = other.successful_;
+      readingTime_ = other.readingTime_ != null ? other.readingTime_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -105,25 +343,14 @@ namespace MeterReaderWeb.Services {
       }
     }
 
-    /// <summary>Field number for the "notes" field.</summary>
-    public const int NotesFieldNumber = 3;
-    private string notes_ = "";
+    /// <summary>Field number for the "readingTime" field.</summary>
+    public const int ReadingTimeFieldNumber = 5;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp readingTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Notes {
-      get { return notes_; }
+    public global::Google.Protobuf.WellKnownTypes.Timestamp ReadingTime {
+      get { return readingTime_; }
       set {
-        notes_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "successful" field.</summary>
-    public const int SuccessfulFieldNumber = 4;
-    private bool successful_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Successful {
-      get { return successful_; }
-      set {
-        successful_ = value;
+        readingTime_ = value;
       }
     }
 
@@ -142,8 +369,7 @@ namespace MeterReaderWeb.Services {
       }
       if (CustomerId != other.CustomerId) return false;
       if (ReadingValue != other.ReadingValue) return false;
-      if (Notes != other.Notes) return false;
-      if (Successful != other.Successful) return false;
+      if (!object.Equals(ReadingTime, other.ReadingTime)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -152,8 +378,7 @@ namespace MeterReaderWeb.Services {
       int hash = 1;
       if (CustomerId != 0) hash ^= CustomerId.GetHashCode();
       if (ReadingValue != 0) hash ^= ReadingValue.GetHashCode();
-      if (Notes.Length != 0) hash ^= Notes.GetHashCode();
-      if (Successful != false) hash ^= Successful.GetHashCode();
+      if (readingTime_ != null) hash ^= ReadingTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -178,13 +403,9 @@ namespace MeterReaderWeb.Services {
         output.WriteRawTag(16);
         output.WriteInt32(ReadingValue);
       }
-      if (Notes.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Notes);
-      }
-      if (Successful != false) {
-        output.WriteRawTag(32);
-        output.WriteBool(Successful);
+      if (readingTime_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(ReadingTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -203,13 +424,9 @@ namespace MeterReaderWeb.Services {
         output.WriteRawTag(16);
         output.WriteInt32(ReadingValue);
       }
-      if (Notes.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Notes);
-      }
-      if (Successful != false) {
-        output.WriteRawTag(32);
-        output.WriteBool(Successful);
+      if (readingTime_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(ReadingTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -226,11 +443,8 @@ namespace MeterReaderWeb.Services {
       if (ReadingValue != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(ReadingValue);
       }
-      if (Notes.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Notes);
-      }
-      if (Successful != false) {
-        size += 1 + 1;
+      if (readingTime_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ReadingTime);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -249,11 +463,11 @@ namespace MeterReaderWeb.Services {
       if (other.ReadingValue != 0) {
         ReadingValue = other.ReadingValue;
       }
-      if (other.Notes.Length != 0) {
-        Notes = other.Notes;
-      }
-      if (other.Successful != false) {
-        Successful = other.Successful;
+      if (other.readingTime_ != null) {
+        if (readingTime_ == null) {
+          ReadingTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        ReadingTime.MergeFrom(other.ReadingTime);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -277,12 +491,11 @@ namespace MeterReaderWeb.Services {
             ReadingValue = input.ReadInt32();
             break;
           }
-          case 26: {
-            Notes = input.ReadString();
-            break;
-          }
-          case 32: {
-            Successful = input.ReadBool();
+          case 42: {
+            if (readingTime_ == null) {
+              ReadingTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(ReadingTime);
             break;
           }
         }
@@ -307,12 +520,11 @@ namespace MeterReaderWeb.Services {
             ReadingValue = input.ReadInt32();
             break;
           }
-          case 26: {
-            Notes = input.ReadString();
-            break;
-          }
-          case 32: {
-            Successful = input.ReadBool();
+          case 42: {
+            if (readingTime_ == null) {
+              ReadingTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(ReadingTime);
             break;
           }
         }
@@ -334,7 +546,7 @@ namespace MeterReaderWeb.Services {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MeterReaderWeb.Services.MeterReaderReflection.Descriptor.MessageTypes[1]; }
+      get { return global::MeterReaderWeb.Services.MeterReaderReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -374,9 +586,9 @@ namespace MeterReaderWeb.Services {
 
     /// <summary>Field number for the "success" field.</summary>
     public const int SuccessFieldNumber = 2;
-    private bool success_;
+    private global::MeterReaderWeb.Services.ReadingStatus success_ = global::MeterReaderWeb.Services.ReadingStatus.Invalid;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Success {
+    public global::MeterReaderWeb.Services.ReadingStatus Success {
       get { return success_; }
       set {
         success_ = value;
@@ -405,7 +617,7 @@ namespace MeterReaderWeb.Services {
     public override int GetHashCode() {
       int hash = 1;
       if (Message.Length != 0) hash ^= Message.GetHashCode();
-      if (Success != false) hash ^= Success.GetHashCode();
+      if (Success != global::MeterReaderWeb.Services.ReadingStatus.Invalid) hash ^= Success.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -426,9 +638,9 @@ namespace MeterReaderWeb.Services {
         output.WriteRawTag(10);
         output.WriteString(Message);
       }
-      if (Success != false) {
+      if (Success != global::MeterReaderWeb.Services.ReadingStatus.Invalid) {
         output.WriteRawTag(16);
-        output.WriteBool(Success);
+        output.WriteEnum((int) Success);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -443,9 +655,9 @@ namespace MeterReaderWeb.Services {
         output.WriteRawTag(10);
         output.WriteString(Message);
       }
-      if (Success != false) {
+      if (Success != global::MeterReaderWeb.Services.ReadingStatus.Invalid) {
         output.WriteRawTag(16);
-        output.WriteBool(Success);
+        output.WriteEnum((int) Success);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -459,8 +671,8 @@ namespace MeterReaderWeb.Services {
       if (Message.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
       }
-      if (Success != false) {
-        size += 1 + 1;
+      if (Success != global::MeterReaderWeb.Services.ReadingStatus.Invalid) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Success);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -476,7 +688,7 @@ namespace MeterReaderWeb.Services {
       if (other.Message.Length != 0) {
         Message = other.Message;
       }
-      if (other.Success != false) {
+      if (other.Success != global::MeterReaderWeb.Services.ReadingStatus.Invalid) {
         Success = other.Success;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -498,7 +710,7 @@ namespace MeterReaderWeb.Services {
             break;
           }
           case 16: {
-            Success = input.ReadBool();
+            Success = (global::MeterReaderWeb.Services.ReadingStatus) input.ReadEnum();
             break;
           }
         }
@@ -520,7 +732,7 @@ namespace MeterReaderWeb.Services {
             break;
           }
           case 16: {
-            Success = input.ReadBool();
+            Success = (global::MeterReaderWeb.Services.ReadingStatus) input.ReadEnum();
             break;
           }
         }

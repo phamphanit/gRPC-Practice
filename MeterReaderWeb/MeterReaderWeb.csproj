@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Protos\enums.proto" />
     <None Remove="Protos\MeterReader.proto" />
   </ItemGroup>
 
@@ -38,7 +39,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Protobuf Include="Protos\MeterReader.proto" GrpcServices="Server" />
+    <Protobuf Include="Protos\enums.proto" GrpcServices="None" ProtoRoot="Protos\"/>
+    <Protobuf Include="Protos\MeterReader.proto" GrpcServices="Server" ProtoRoot="Protos\"/>
   </ItemGroup>
 
 </Project>

@@ -42,14 +42,14 @@ namespace MeterReaderWeb.Services {
       return parser.ParseFrom(context.PayloadAsNewBuffer());
     }
 
-    static readonly grpc::Marshaller<global::MeterReaderWeb.Services.ReadingMessage> __Marshaller_ReadingMessage = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::MeterReaderWeb.Services.ReadingMessage.Parser));
+    static readonly grpc::Marshaller<global::MeterReaderWeb.Services.ReadingPacket> __Marshaller_ReadingPacket = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::MeterReaderWeb.Services.ReadingPacket.Parser));
     static readonly grpc::Marshaller<global::MeterReaderWeb.Services.StatusMessage> __Marshaller_StatusMessage = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::MeterReaderWeb.Services.StatusMessage.Parser));
 
-    static readonly grpc::Method<global::MeterReaderWeb.Services.ReadingMessage, global::MeterReaderWeb.Services.StatusMessage> __Method_AddReading = new grpc::Method<global::MeterReaderWeb.Services.ReadingMessage, global::MeterReaderWeb.Services.StatusMessage>(
+    static readonly grpc::Method<global::MeterReaderWeb.Services.ReadingPacket, global::MeterReaderWeb.Services.StatusMessage> __Method_AddReading = new grpc::Method<global::MeterReaderWeb.Services.ReadingPacket, global::MeterReaderWeb.Services.StatusMessage>(
         grpc::MethodType.Unary,
         __ServiceName,
         "AddReading",
-        __Marshaller_ReadingMessage,
+        __Marshaller_ReadingPacket,
         __Marshaller_StatusMessage);
 
     /// <summary>Service descriptor</summary>
@@ -62,7 +62,7 @@ namespace MeterReaderWeb.Services {
     [grpc::BindServiceMethod(typeof(MeterReadingService), "BindService")]
     public abstract partial class MeterReadingServiceBase
     {
-      public virtual global::System.Threading.Tasks.Task<global::MeterReaderWeb.Services.StatusMessage> AddReading(global::MeterReaderWeb.Services.ReadingMessage request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::MeterReaderWeb.Services.StatusMessage> AddReading(global::MeterReaderWeb.Services.ReadingPacket request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -83,7 +83,7 @@ namespace MeterReaderWeb.Services {
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     public static void BindService(grpc::ServiceBinderBase serviceBinder, MeterReadingServiceBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_AddReading, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::MeterReaderWeb.Services.ReadingMessage, global::MeterReaderWeb.Services.StatusMessage>(serviceImpl.AddReading));
+      serviceBinder.AddMethod(__Method_AddReading, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::MeterReaderWeb.Services.ReadingPacket, global::MeterReaderWeb.Services.StatusMessage>(serviceImpl.AddReading));
     }
 
   }
