@@ -90,6 +90,3 @@ C:\Users\PHAM PHAN\Desktop\gRPC\MeterReader-master\src\MeterReader\MeterReaderWe
 C:\Users\PHAM PHAN\Desktop\gRPC\MeterReader-master\src\MeterReader\MeterReaderWeb\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\PHAM PHAN\Desktop\gRPC\MeterReader-master\src\MeterReader\MeterReaderWeb\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Options.dll
 C:\Users\PHAM PHAN\Desktop\gRPC\MeterReader-master\src\MeterReader\MeterReaderWeb\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Primitives.dll
-C:\Users\PHAM PHAN\Desktop\gRPC\MeterReader-master\src\MeterReader\MeterReaderWeb\obj\Debug\netcoreapp3.0\MeterReaderWeb.csproj.CoreCompileInputs.cache
-C:\Users\PHAM PHAN\Desktop\gRPC\MeterReader-master\src\MeterReader\MeterReaderWeb\obj\Debug\netcoreapp3.0\MeterReaderWeb.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\PHAM PHAN\Desktop\gRPC\MeterReader-master\src\MeterReader\MeterReaderWeb\obj\Debug\netcoreapp3.0\MeterReaderWeb.MvcApplicationPartsAssemblyInfo.cache

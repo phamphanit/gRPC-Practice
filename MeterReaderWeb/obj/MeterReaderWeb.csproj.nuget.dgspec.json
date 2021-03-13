@@ -127,6 +127,10 @@
               "target": "Package",
               "version": "[2.35.0, )"
             },
+            "Microsoft.AspNetCore.Authentication.Certificate": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.0.0, )"

@@ -118,6 +118,18 @@
           "build/Grpc.Tools.targets": {}
         }
       },
+      "Microsoft.AspNetCore.Authentication.Certificate/3.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/Microsoft.AspNetCore.Authentication.Certificate.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Microsoft.AspNetCore.Authentication.Certificate.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Microsoft.AspNetCore.Authentication.JwtBearer/3.0.0": {
         "type": "package",
         "dependencies": {
@@ -1882,6 +1894,19 @@
         "tools/windows_x64/protoc.exe",
         "tools/windows_x86/grpc_csharp_plugin.exe",
         "tools/windows_x86/protoc.exe"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.Certificate/3.0.0": {
+      "sha512": "2GmxqnltumbRgAiZXsOgWN+PUYbaOcy3JZWo831Ti9VfiS9/xQlgiRJVJVVdGJ8/VKGVkxzFKBc2rIdIfQstPg==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.certificate/3.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.0/Microsoft.AspNetCore.Authentication.Certificate.dll",
+        "lib/netcoreapp3.0/Microsoft.AspNetCore.Authentication.Certificate.xml",
+        "microsoft.aspnetcore.authentication.certificate.3.0.0.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.certificate.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/3.0.0": {
@@ -6081,6 +6106,7 @@
     ".NETCoreApp,Version=v3.0": [
       "Grpc.AspNetCore >= 2.35.0",
       "MeterReaderLib >= 1.0.0",
+      "Microsoft.AspNetCore.Authentication.Certificate >= 3.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 3.0.0",
       "Microsoft.AspNetCore.Identity.UI >= 3.0.0",
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 3.0.0",
@@ -6137,6 +6163,10 @@
           "Grpc.AspNetCore": {
             "target": "Package",
             "version": "[2.35.0, )"
+          },
+          "Microsoft.AspNetCore.Authentication.Certificate": {
+            "target": "Package",
+            "version": "[3.0.0, )"
           },
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",
