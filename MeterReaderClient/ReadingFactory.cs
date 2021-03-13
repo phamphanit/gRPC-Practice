@@ -10,13 +10,6 @@ namespace MeterReaderClient
 {
     public class ReadingFactory
     {
-        private readonly ILogger<ReadingFactory> logger;
-
-        public ReadingFactory(ILogger<ReadingFactory> logger)
-        {
-            logger = logger;
-        }
-
         public Task<ReadingMessage> Generate(int customerId)
         {
             var reading = new ReadingMessage()

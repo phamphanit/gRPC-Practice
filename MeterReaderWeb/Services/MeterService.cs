@@ -1,4 +1,5 @@
-﻿using Grpc.Core;
+﻿using Google.Protobuf.WellKnownTypes;
+using Grpc.Core;
 using MeterReaderWeb.Data;
 using MeterReaderWeb.Data.Entities;
 using Microsoft.Extensions.Logging;
@@ -18,6 +19,18 @@ namespace MeterReaderWeb.Services
             this._logger = logger;
             this._repository = repository;
         }
+        public override async Task<Empty> SendDiagnostics(IAsyncStreamReader<ReadingMessage> requestStream, ServerCallContext context)
+        {
+            var theTask = Task.Run(async () =>
+            {
+                await foreach (var reading in requestStream.ReadAllAsync())
+                {
+                    _logger.LogInformation($"Recieved Reading: {reading}");
+                }
+            });
+            await theTask;
+            return new Empty();
+        }
         public async override Task<StatusMessage> AddReading(ReadingPacket request, ServerCallContext context)
         {
             var result = new StatusMessage()
@@ -30,6 +43,17 @@ namespace MeterReaderWeb.Services
                 {
                     foreach (var r in request.Readings)
                     {
+                        if(r.ReadingValue < 1000)
+                        {
+                            _logger.LogDebug("Reading Value below acceptable level");
+                            var trailer = new Metadata()
+                            {
+                                {"BadValue" , r.ReadingValue.ToString() },
+                                {"Field" , "ReadingValue" },
+                                {"BadValue" , "Readings are invalid" },
+                            };
+                            throw new RpcException(new Status(StatusCode.OutOfRange, "Value too low"),trailer);
+                        }
                         //save to database
                         var reading = new MeterReading()
                         {
@@ -45,10 +69,15 @@ namespace MeterReaderWeb.Services
                         _logger.LogInformation($"Successful stored reading {request.Readings.Count}");
                     }
                 }
+                catch(RpcException)
+                {
+                    throw;
+                }
                 catch(Exception ex)
                 {
-                    result.Message = "Exception throw during process";
                     _logger.LogError($"Exeption throw during saving of readings: {ex}");
+
+                    throw new RpcException(Status.DefaultCancelled,"Exception throw during process");
                 }
                
             }
