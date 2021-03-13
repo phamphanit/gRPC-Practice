@@ -1,0 +1,13 @@
+C:\Users\PHAM PHAN\Desktop\gRPC\MeterReader-master\src\MeterReader\MeterReaderLib\bin\Debug\netcoreapp3.0\Properties\launchSettings.json
+C:\Users\PHAM PHAN\Desktop\gRPC\MeterReader-master\src\MeterReader\MeterReaderLib\bin\Debug\netcoreapp3.0\MeterReaderLib.deps.json
+C:\Users\PHAM PHAN\Desktop\gRPC\MeterReader-master\src\MeterReader\MeterReaderLib\bin\Debug\netcoreapp3.0\MeterReaderLib.dll
+C:\Users\PHAM PHAN\Desktop\gRPC\MeterReader-master\src\MeterReader\MeterReaderLib\bin\Debug\netcoreapp3.0\MeterReaderLib.pdb
+C:\Users\PHAM PHAN\Desktop\gRPC\MeterReader-master\src\MeterReader\MeterReaderLib\obj\Debug\netcoreapp3.0\MeterReaderLib.csprojAssemblyReference.cache
+C:\Users\PHAM PHAN\Desktop\gRPC\MeterReader-master\src\MeterReader\MeterReaderLib\obj\Debug\netcoreapp3.0\MeterReaderLib.AssemblyInfoInputs.cache
+C:\Users\PHAM PHAN\Desktop\gRPC\MeterReader-master\src\MeterReader\MeterReaderLib\obj\Debug\netcoreapp3.0\MeterReaderLib.AssemblyInfo.cs
+C:\Users\PHAM PHAN\Desktop\gRPC\MeterReader-master\src\MeterReader\MeterReaderLib\obj\Debug\netcoreapp3.0\MeterReaderLib.csproj.CoreCompileInputs.cache
+C:\Users\PHAM PHAN\Desktop\gRPC\MeterReader-master\src\MeterReader\MeterReaderLib\obj\Debug\netcoreapp3.0\MeterReaderLib.RazorTargetAssemblyInfo.cache
+C:\Users\PHAM PHAN\Desktop\gRPC\MeterReader-master\src\MeterReader\MeterReaderLib\obj\Debug\netcoreapp3.0\staticwebassets\MeterReaderLib.StaticWebAssets.Manifest.cache
+C:\Users\PHAM PHAN\Desktop\gRPC\MeterReader-master\src\MeterReader\MeterReaderLib\obj\Debug\netcoreapp3.0\staticwebassets\MeterReaderLib.StaticWebAssets.xml
+C:\Users\PHAM PHAN\Desktop\gRPC\MeterReader-master\src\MeterReader\MeterReaderLib\obj\Debug\netcoreapp3.0\MeterReaderLib.dll
+C:\Users\PHAM PHAN\Desktop\gRPC\MeterReader-master\src\MeterReader\MeterReaderLib\obj\Debug\netcoreapp3.0\MeterReaderLib.pdb
