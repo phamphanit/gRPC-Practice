@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Threading.Tasks;
 using Google.Protobuf.WellKnownTypes;
@@ -38,8 +40,14 @@ namespace MeterReaderClient
             {
                 if (_client == null)
                 {
+                    //var cert = new X509Certificate2(_config["Service:CertFileName"],
+                    //                                  _config["Service:CertPassword"]);
+                    //var handler = new HttpClientHandler();
+                    //handler.ClientCertificates.Add(cert);
+                    //var client = new HttpClient(handler);
                     var opt = new GrpcChannelOptions()
                     {
+                        //HttpClient = client,
                         LoggerFactory = loggerFactory
                     };
                     var channel = GrpcChannel.ForAddress(_config["Service:ServerUrl"], opt);
